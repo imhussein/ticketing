@@ -1,2 +1,6 @@
 client/node_modules
 auth/node_modules
+common/node_modules
+tickets/node_modules
+nats-test/node_modules
+orders/node_modules

@@ -7,13 +7,21 @@ const IndexPage = ({ currentUser }) => {
 
 IndexPage.getInitialProps = async ({ req }) => {
   if (typeof window === "undefined") {
-    const { data } = await Axios.get(
-      "http://ingress-nginx-controller.ingress-nginx.svc.cluster.local/api/users/currentuser",
-      {
-        headers: req.headers,
-      }
-    );
-    return data;
+    // const { data } = await Axios.get(
+    //   "http://ingress-nginx-controller.ingress-nginx.svc.cluster.local/api/users/currentuser",
+    //   {
+    //     headers: {
+    //       Host: "ticketing.dev",
+    //     },
+    //   }
+    // );
+    // return data;
+    return {
+      currentUser: {
+        email: "mohamed@gmail.com",
+        password: "1233232",
+      },
+    };
   } else {
     const { data } = await Axios.get("/api/users/currentuser");
     return data;
